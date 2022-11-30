@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <meta charset="utf-8">
+      <title>Religious Eastern</title>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <meta content="" name="keywords">
+      <meta content="" name="description">
+
+  <!-- Icon Font Stylesheet -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+      <link href="lib/animate/animate.min.css" rel="stylesheet">
+      <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+      <link href="css/style.css" rel="stylesheet">
+  </head>
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
+        <link rel="stylesheet" href="css/filter.css">
+<link rel="stylesheet" href="css/nouislider.min.css">
+        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+          <a href="index.html" class="navbar-brand d-flex align-items-center"><img src="LOGO.png" alt="image" width="400" height="400"
+            <div class="collapse navbar-collapse" id="navbarDarkDropdownMenuLink">
+                  <div class="navbar-nav ms-auto p-2 p-lg-0">
+                      <a href="../index.html" class="nav-item nav-link active"style="color:#000080">Home</a>
+                      <a href="../Northern.html" class="nav-item nav-link"style="color:#000080">Northern</a>
+                      <a href="../Central.html" class="nav-item nav-link"style="color:#000080">Central</a>
+                      <a href="../Southern.html" class="nav-item nav-link"style="color:#000080">Southern</a>
+                      <a href="../Eastern.html" class="nav-item nav-link"style="color:#FFB200"><ins>Eastern</ins></a>
+                      <a href="../Northeastern.html" class="nav-item nav-link"style="color:#000080">Northeastern</a>
+                      <a href="../contact.html" class="nav-item nav-link"style="color:#000080">Contact </a>
+                    </div>
+        </nav>
+      <!-- Navbar End -->
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
+        <link rel="stylesheet" href="css/filter.css">
+<link rel="stylesheet" href="css/nouislider.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-search.js"></script>
+        <script src="js/tailDT.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/wNumb.js"></script>
+        <script src="data/east_2.js"></script>
+        <script src="data/TotalEastt_3.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:13
+        }).fitBounds([[11.720582731743956,99.99490209376695],[14.819205409593952,103.20983943670142]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_GoogleSatelliteHybrid_0');
+        map.getPane('pane_GoogleSatelliteHybrid_0').style.zIndex = 400;
+        var layer_GoogleSatelliteHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatelliteHybrid_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 13,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_GoogleSatelliteHybrid_0;
+        map.addLayer(layer_GoogleSatelliteHybrid_0);
+        map.createPane('pane_StamenTonerLite_1');
+        map.getPane('pane_StamenTonerLite_1').style.zIndex = 401;
+        var layer_StamenTonerLite_1 = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
+            pane: 'pane_StamenTonerLite_1',
+            opacity: 1.0,
+            attribution: '<a href="https://maps.stamen.com/">Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL</a>',
+            minZoom: 13,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_StamenTonerLite_1;
+        map.addLayer(layer_StamenTonerLite_1);
+        function pop_east_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_EN'] !== null ? autolinker.link(feature.properties['ADM1_EN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_TH'] !== null ? autolinker.link(feature.properties['ADM1_TH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_PCODE'] !== null ? autolinker.link(feature.properties['ADM1_PCODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1_REF'] !== null ? autolinker.link(feature.properties['ADM1_REF'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1ALT1EN'] !== null ? autolinker.link(feature.properties['ADM1ALT1EN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1ALT2EN'] !== null ? autolinker.link(feature.properties['ADM1ALT2EN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM1ALT1TH'] !== null ? autolinker.link(feature.properties['ADM1ALT1TH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>ADM1ALT2TH</strong><br />' + (feature.properties['ADM1ALT2TH'] !== null ? autolinker.link(feature.properties['ADM1ALT2TH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM0_EN'] !== null ? autolinker.link(feature.properties['ADM0_EN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM0_TH'] !== null ? autolinker.link(feature.properties['ADM0_TH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADM0_PCODE'] !== null ? autolinker.link(feature.properties['ADM0_PCODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date'] !== null ? autolinker.link(feature.properties['date'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validOn'] !== null ? autolinker.link(feature.properties['validOn'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['validTo'] !== null ? autolinker.link(feature.properties['validTo'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_east_2_0() {
+            return {
+                pane: 'pane_east_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,180,60,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_east_2');
+        map.getPane('pane_east_2').style.zIndex = 402;
+        map.getPane('pane_east_2').style['mix-blend-mode'] = 'normal';
+        var layer_east_2 = new L.geoJson(json_east_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_east_2',
+            layerName: 'layer_east_2',
+            pane: 'pane_east_2',
+            onEachFeature: pop_east_2,
+            style: style_east_2_0,
+        });
+        bounds_group.addLayer(layer_east_2);
+        map.addLayer(layer_east_2);
+        function pop_TotalEastt_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">zone</th>\
+                        <td>' + (feature.properties['zone'] !== null ? autolinker.link(feature.properties['zone'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">province</th>\
+                        <td>' + (feature.properties['province'] !== null ? autolinker.link(feature.properties['province'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">district</th>\
+                        <td>' + (feature.properties['district'] !== null ? autolinker.link(feature.properties['district'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">sub distri</th>\
+                        <td>' + (feature.properties['sub distri'] !== null ? autolinker.link(feature.properties['sub distri'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Y'] !== null ? autolinker.link(feature.properties['Y'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['X'] !== null ? autolinker.link(feature.properties['X'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['religion'] !== null ? autolinker.link(feature.properties['religion'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TotalEastt_3_0(feature) {
+            switch(String(feature.properties['religion'])) {
+                case 'คริสตร์':
+                    return {
+                pane: 'pane_TotalEastt_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(155,155,155,0.8196078431372549)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(64,75,200,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'พุทธ':
+                    return {
+                pane: 'pane_TotalEastt_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(155,155,155,0.8196078431372549)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,191,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'อิสลาม':
+                    return {
+                pane: 'pane_TotalEastt_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(155,155,155,0.8196078431372549)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_TotalEastt_3');
+        map.getPane('pane_TotalEastt_3').style.zIndex = 403;
+        map.getPane('pane_TotalEastt_3').style['mix-blend-mode'] = 'normal';
+        var layer_TotalEastt_3 = new L.geoJson(json_TotalEastt_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_TotalEastt_3',
+            layerName: 'layer_TotalEastt_3',
+            pane: 'pane_TotalEastt_3',
+            onEachFeature: pop_TotalEastt_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TotalEastt_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TotalEastt_3);
+        map.addLayer(layer_TotalEastt_3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'TotalEastt<br /><table><tr><td style="text-align: center;"><img src="legend/TotalEastt_3_ครสตร0.png" /></td><td>คริสตร์</td></tr><tr><td style="text-align: center;"><img src="legend/TotalEastt_3_พทธ1.png" /></td><td>พุทธ</td></tr><tr><td style="text-align: center;"><img src="legend/TotalEastt_3_อสลาม2.png" /></td><td>อิสลาม</td></tr></table>': layer_TotalEastt_3,'<img src="legend/east_2.png" /> east': layer_east_2,"Stamen Toner Lite": layer_StamenTonerLite_1,"Google Satellite Hybrid": layer_GoogleSatelliteHybrid_0,}).addTo(map);
+        setBounds();
+        map.addControl(new L.Control.Search({
+            layer: layer_TotalEastt_3,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'name'}));
+        document.getElementsByClassName('search-button')[0].className +=
+         ' fa fa-binoculars';
+        var mapDiv = document.getElementById('map');
+        var row = document.createElement('div');
+        row.className="row";
+        row.id="all";
+        row.style.height = "100%";
+        var col1 = document.createElement('div');
+        col1.className="col9";
+        col1.id = "mapWindow";
+        col1.style.height = "99%";
+        col1.style.width = "80%";
+        col1.style.display = "inline-block";
+        var col2 = document.createElement('div');
+        col2.className="col3";
+        col2.id = "menu";
+        col2.style.display = "inline-block";
+        mapDiv.parentNode.insertBefore(row, mapDiv);
+        document.getElementById("all").appendChild(col1);
+        document.getElementById("all").appendChild(col2);
+        col1.appendChild(mapDiv)
+        var Filters = {"province": "str","religion": "str"};
+        function filterFunc() {
+          map.eachLayer(function(lyr){
+          if ("options" in lyr && "dataVar" in lyr["options"]){
+            features = this[lyr["options"]["dataVar"]].features.slice(0);
+            try{
+              for (key in Filters){
+                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
+                if (Filters[key] == "str" || Filters[key] == "bool"){
+                  var selection = [];
+                  var options = document.getElementById("sel_" + keyS).options
+                  for (var i=0; i < options.length; i++) {
+                    if (options[i].selected) selection.push(options[i].value);
+                  }
+                    try{
+                      if (key in features[0].properties){
+                        for (i = features.length - 1;
+                          i >= 0; --i){
+                          if (selection.indexOf(
+                          features[i].properties[key])<0
+                          && selection.length>0) {
+                          features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                  }
+                }
+                if (Filters[key] == "int"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (parseInt(features[i].properties[key])
+                          < sliderVals[0]
+                          || parseInt(features[i].properties[key])
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "real"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (features[i].properties[key]
+                          < sliderVals[0]
+                          || features[i].properties[key]
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "date"
+                  || Filters[key] == "datetime"
+                  || Filters[key] == "time"){
+                  try{
+                    if (key in features[0].properties){
+                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                      startdate = document.getElementById("dat_" +
+                        HTMLkey + "_date1").value.replace(" ", "T");
+                      enddate = document.getElementById("dat_" +
+                        HTMLkey + "_date2").value.replace(" ", "T");
+                      for (i = features.length - 1; i >= 0; --i){
+                        if (features[i].properties[key] < startdate
+                          || features[i].properties[key] > enddate){
+                          features.splice(i,1);
+                        }
+                      }
+                    }
+                  } catch(err){
+                  }
+                }
+              }
+            } catch(err){
+            }
+          this[lyr["options"]["layerName"]].clearLayers();
+          this[lyr["options"]["layerName"]].addData(features);
+          }
+          })
+        }
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
+            var div_province = document.createElement('div');
+            div_province.id = "div_province";
+            div_province.className= "filterselect";
+            document.getElementById("menu").appendChild(div_province);
+            sel_province = document.createElement('select');
+            sel_province.multiple = true;
+            sel_province.size = 9;
+            sel_province.id = "sel_province";
+            var province_options_str = "<option value='' unselected></option>";
+            sel_province.onchange = function(){filterFunc()};
+            province_options_str  += '<option value="จันทบุรี">จันทบุรี</option>';
+            province_options_str  += '<option value="ฉะเชิงเทรา">ฉะเชิงเทรา</option>';
+            province_options_str  += '<option value="ชลบุรี">ชลบุรี</option>';
+            province_options_str  += '<option value="ตราด">ตราด</option>';
+            province_options_str  += '<option value="นครนายก">นครนายก</option>';
+            province_options_str  += '<option value="ปราจีนบุรี">ปราจีนบุรี</option>';
+            province_options_str  += '<option value="ระยอง">ระยอง</option>';
+            province_options_str  += '<option value="สมุทรปราการ">สมุทรปราการ</option>';
+            province_options_str  += '<option value="สระแก้ว">สระแก้ว</option>';
+            sel_province.innerHTML = province_options_str;
+            div_province.appendChild(sel_province);
+            var lab_province = document.createElement('div');
+            lab_province.innerHTML = 'province';
+            lab_province.className = 'filterlabel';
+            div_province.appendChild(lab_province);
+            var reset_province = document.createElement('div');
+            reset_province.innerHTML = 'clear filter';
+            reset_province.className = 'filterlabel';
+            reset_province.onclick = function() {
+                var options = document.getElementById("sel_province").options;
+                for (var i=0; i < options.length; i++) {
+                    options[i].selected = false;
+                }
+                filterFunc();
+            };
+            div_province.appendChild(reset_province);
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
+            var div_religion = document.createElement('div');
+            div_religion.id = "div_religion";
+            div_religion.className= "filterselect";
+            document.getElementById("menu").appendChild(div_religion);
+            sel_religion = document.createElement('select');
+            sel_religion.multiple = true;
+            sel_religion.size = 4;
+            sel_religion.id = "sel_religion";
+            var religion_options_str = "<option value='' unselected></option>";
+            sel_religion.onchange = function(){filterFunc()};
+            religion_options_str  += '<option value="NULL">NULL</option>';
+            religion_options_str  += '<option value="คริสตร์">คริสตร์</option>';
+            religion_options_str  += '<option value="พุทธ">พุทธ</option>';
+            religion_options_str  += '<option value="อิสลาม">อิสลาม</option>';
+            sel_religion.innerHTML = religion_options_str;
+            div_religion.appendChild(sel_religion);
+            var lab_religion = document.createElement('div');
+            lab_religion.innerHTML = 'religion';
+            lab_religion.className = 'filterlabel';
+            div_religion.appendChild(lab_religion);
+            var reset_religion = document.createElement('div');
+            reset_religion.innerHTML = 'clear filter';
+            reset_religion.className = 'filterlabel';
+            reset_religion.onclick = function() {
+                var options = document.getElementById("sel_religion").options;
+                for (var i=0; i < options.length; i++) {
+                    options[i].selected = false;
+                }
+                filterFunc();
+            };
+            div_religion.appendChild(reset_religion);
+        </script>
+    </body>
+</html>
+
+<!-- Start Subscribe -->
+<br>
+<br>
+<div class="subscribe-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="text-center">
+          <br><a href="#">Back to Top</a> : <a href="/Users/sutthidaratthongta/Documents/religious1/Eastern.html">Homepage</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- End Subscribe -->
+
+<!-- Start Footer -->
+<footer class="footer-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="footer-company-name">Thank You</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
